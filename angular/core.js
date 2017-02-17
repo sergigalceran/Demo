@@ -1,6 +1,6 @@
-var MAinApp= angular.module('MainApp', []);
+var MainApp= angular.module('MainApp', []);
 
-MainApp.mainController('core', function($scope, $http) {
+MainApp.controller('core', function($scope, $http) {
 	$scope.newPersona = {};
 	$scope.personas = {};
 	$scope.selected = false;
