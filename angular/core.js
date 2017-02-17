@@ -1,3 +1,5 @@
+var API = "http://localhost:3001";
+
 var MainApp= angular.module('MainApp', []);
 
 MainApp.controller('core', function($scope, $http) {
@@ -6,7 +8,7 @@ MainApp.controller('core', function($scope, $http) {
 	$scope.selected = false;
 
 	// Obtenemos todos los datos de la base de datos
-	$http.get('/api/persona').success(function(data) {
+	$http.get(API +'/api/persona').success(function(data) {
 		$scope.personas = data;
 	})
 	.error(function(data) {
@@ -16,7 +18,7 @@ MainApp.controller('core', function($scope, $http) {
 
 	// Función para registrar a una persona
 	$scope.registrarPersona = function() {
-		$http.post('/api/persona', $scope.newPersona)
+		$http.post(API + '/api/persona', $scope.newPersona)
 		.success(function(data) {
 				$scope.newPersona = {}; // Borramos los datos del formulario
 				$scope.personas = data;
@@ -28,7 +30,7 @@ MainApp.controller('core', function($scope, $http) {
 
 	// Función para editar los datos de una persona
 	$scope.modificarPersona = function(newPersona) {
-		$http.put('/api/persona/' + $scope.newPersona._id, $scope.newPersona)
+		$http.put(API + '/api/persona/' + $scope.newPersona._id, $scope.newPersona)
 		.success(function(data) {
 				$scope.newPersona = {}; // Borramos los datos del formulario
 				$scope.personas = data;
@@ -41,7 +43,7 @@ MainApp.controller('core', function($scope, $http) {
 
 	// Función que borra un objeto persona conocido su id
 	$scope.borrarPersona = function(newPersona) {
-		$http.delete('/api/persona/' + $scope.newPersona._id)
+		$http.delete(API + '/api/persona/' + $scope.newPersona._id)
 		.success(function(data) {
 			$scope.newPersona = {};
 			$scope.personas = data;
