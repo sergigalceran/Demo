@@ -15,6 +15,9 @@
     "mongoose": "^4.8.3"
   },
   "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^2.1.0",
+    "grunt-obfuscator": "^0.1.0",
     "nodemon": "^1.11.0"
   }
 }
