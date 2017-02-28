@@ -1,0 +1,22 @@
+{
+  "name": "ejemplo",
+  "description": "Libreria de bower",
+  "main": "server.js",
+  "authors": [
+    "Sergi"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sergigalceran/Demo",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "components"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "1.2.16"
+  }
+}
