@@ -8,51 +8,49 @@ MainApp.controller('core', function($scope, $http) {
 	$scope.selected = false;
 
 	// Obtenemos todos los datos de la base de datos
-	$http.get(API +'/api/persona').success(function(data) {
-		$scope.personas = data;
-	})
-	.error(function(data) {
-		console.log('Error: ' + data);
-	});
+	$http.get(API +'/api/persona')
+        .then(function(response) {
+		$scope.personas = response.data;
+	}, function (error){
+                console.log('Error: ' + error.data);
+        });
 
 
 	// Función para registrar a una persona
-	$scope.registrarPersona = function() {
-		$http.post(API + '/api/persona', $scope.newPersona)
-		.success(function(data) {
-				$scope.newPersona = {}; // Borramos los datos del formulario
-				$scope.personas = data;
-			})
-		.error(function(data) {
-			console.log('Error: ' + data);
-		});
-	};
+        $scope.registrarPersona = function() {
+            $http.post(API + '/api/persona', $scope.newPersona)
+            .then(function(response) {
+                $scope.newPersona = {}; // Borramos los datos del formulario
+                $scope.personas = response.data;
+            }, function(error){
+                console.log('Error: ' + error.data);
+            });
+        };
 
 	// Función para editar los datos de una persona
-	$scope.modificarPersona = function(newPersona) {
-		$http.put(API + '/api/persona/' + $scope.newPersona._id, $scope.newPersona)
-		.success(function(data) {
-				$scope.newPersona = {}; // Borramos los datos del formulario
-				$scope.personas = data;
-				$scope.selected = false;
-			})
-		.error(function(data) {
-			console.log('Error: ' + data);
-		});
-	};
+        $scope.modificarPersona = function(newPersona) {
+            $http.put(API + '/api/persona/' + $scope.newPersona._id, $scope.newPersona)
+            .then(function(response) {
+                $scope.newPersona = {}; // Borramos los datos del formulario
+                $scope.personas = resposne.data;
+                $scope.selected = false;
+            }, function(error){
+                console.log('Error: ' + error.data);
+            });
+        };
 
 	// Función que borra un objeto persona conocido su id
-	$scope.borrarPersona = function(newPersona) {
-		$http.delete(API + '/api/persona/' + $scope.newPersona._id)
-		.success(function(data) {
-			$scope.newPersona = {};
-			$scope.personas = data;
-			$scope.selected = false;
-		})
-		.error(function(data) {
-			console.log('Error: ' + data);
-		});
-	};
+        $scope.borrarPersona = function(newPersona) {
+            $http.delete(API + '/api/persona/' + $scope.newPersona._id)
+            .then(function(response) {
+                $scope.newPersona = {};
+                $scope.personas = response.data;
+                $scope.selected = false;
+            },function(error){
+                console.log('Error: ' + error.data);
+                
+            });
+        };
 
 	// Función para coger el objeto seleccionado en la tabla
 	$scope.selectPerson = function(persona) {

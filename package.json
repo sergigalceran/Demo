@@ -5,7 +5,11 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "postinstall": "bower install",
+    "update-deps": "npm update",
+    "postupdate-deps": "bower update",
+    "prestart": "npm install"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +22,7 @@
     "grunt": "^1.0.1",
     "grunt-contrib-uglify": "^2.1.0",
     "grunt-obfuscator": "^0.1.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "bower": "^1.7.7"
   }
 }
