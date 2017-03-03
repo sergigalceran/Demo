@@ -2,3 +2,4 @@ node_modules/
 .git/
 .directory
 .bowerrc
+angular/components/
