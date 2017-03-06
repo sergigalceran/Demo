@@ -47,8 +47,8 @@ MainApp.controller('core', function($scope, $http) {
                 $scope.personas = response.data;
                 $scope.selected = false;
             },function(error){
-                console.log('Error: ' + error.data);
-                
+                console.log('Error al borrar: ' + error.data);
+
             });
         };
 
@@ -60,5 +60,5 @@ MainApp.controller('core', function($scope, $http) {
 	};
 });
 ;function suma(a, b) {
-  return 0;
+  return 10;
 }

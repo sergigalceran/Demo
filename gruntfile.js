@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       watch: {
   scripts: {
     files: ['angular/*.js'],
-    tasks: ['jshint'],
+    tasks: ['ofuscar'],
     options: {
       spawn: false,
     },
@@ -48,6 +48,7 @@ concat: {
  // Default task(s).
  grunt.registerTask('default', ['uglify']);
  grunt.registerTask('ofuscar', ['concat','obfuscator']);
+ grunt.registerTask('monitor', ['watch']);
 
 
 };
