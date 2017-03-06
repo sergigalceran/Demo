@@ -19,10 +19,12 @@
     "mongoose": "^4.8.3"
   },
   "devDependencies": {
+    "bower": "^1.7.7",
     "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-uglify": "^2.1.0",
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-obfuscator": "^0.1.0",
-    "nodemon": "^1.11.0",
-    "bower": "^1.7.7"
+    "nodemon": "^1.11.0"
   }
 }
