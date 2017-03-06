@@ -47,7 +47,7 @@ MainApp.controller('core', function($scope, $http) {
                 $scope.personas = response.data;
                 $scope.selected = false;
             },function(error){
-                console.log('Error al borrar: ' + error.data);
+                console.log('Error: ' + error.data);
 
             });
         };
