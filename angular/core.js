@@ -12,7 +12,7 @@ MainApp.controller('core', function($scope, $http) {
         .then(function(response) {
 		$scope.personas = response.data;
 	}, function (error){
-                console.log('Error: ' + error.data);
+                console.log('Error al obtener: ' + error.data);
         });
 
 
