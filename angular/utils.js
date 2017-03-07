@@ -1,3 +1,3 @@
 function suma(a, b) {
-  return 100;
+  return 10;
 }
